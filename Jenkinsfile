@@ -8,13 +8,6 @@ pipeline {
             }
         }
 
-        stage('Configurar Entorno') {
-            steps {
-                sh 'python3 -m venv venv'  // Crear entorno virtual
-                sh 'source venv/bin/activate && pip install -r requirements.txt'  // Instalar dependencias
-            }
-        }
-
         stage('Ejecutar Pruebas') {
             steps {
                 sh 'source venv/bin/activate && pytest tests/'  // Ejecutar pruebas unitarias
