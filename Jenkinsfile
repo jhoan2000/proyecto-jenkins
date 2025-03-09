@@ -10,7 +10,7 @@ pipeline {
 
         stage('Ejecutar Pruebas') {
             steps {
-                sh 'source venv/bin/activate && pytest tests/'  // Ejecutar pruebas unitarias
+                sh '. venv/bin/activate && pytest tests/'  // Ejecutar pruebas unitarias
             }
         }
 
