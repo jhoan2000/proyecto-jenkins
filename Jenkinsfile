@@ -2,22 +2,28 @@ pipeline {
     agent any
 
     stages {
-        stage('Clonar Repositorio') {
+        stage('Checkout') {
             steps {
                 git  branch: 'main', url: 'https://github.com/jhoan2000/proyecto-jenkins.git'
             }
         }
 
-       
-        stage('Ejecutar Pruebas') {
+        stage('Install Dependencies') {
             steps {
-                sh 'source venv/bin/activate && pytest tests/'  // Ejecutar pruebas unitarias
+                sh 'pip install -r requirements.txt'
             }
         }
 
-        stage('Desplegar (Opcional)') {
+        stage('Run Tests') {
             steps {
-                echo 'Aquí puedes agregar comandos para desplegar tu aplicación'
+                sh 'pytest tests/'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying application...'
+                // Agrega aquí los pasos para desplegar la app
             }
         }
     }
