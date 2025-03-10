@@ -1,4 +1,4 @@
-import main
+from main import main
 def test_dummy(): assert 1 == 1 
 
 def test_success():
