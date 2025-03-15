@@ -1,4 +1,4 @@
-# 🚀 Proyecto Jenkins  
+# 🧑‍🦳 Proyecto Jenkins  
 
 Este proyecto tiene como objetivo desplegar un servicio web utilizando **Docker** para la creación de contenedores y **Jenkins** para CI/CD.  
 
